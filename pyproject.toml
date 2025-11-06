@@ -1,0 +1,77 @@
+[project]
+name = "example-analysis"
+version = "0.1.0"
+description = ""
+authors = [{ name = "Kyell Jensen" }]
+# readme = "README.md"
+# license = { text = "MIT" }
+requires-python = ">=3.12"
+
+# ---------------------------------------------------------------------
+# Dependencies: alle auskommentiert, selektiv aktivierbar
+# ---------------------------------------------------------------------
+dependencies = [
+  # --- Core scientific stack ---
+  # "numpy",              # numerische Arrays, Vektoroperationen
+  # "pandas",             # tabellarische Daten, CSV/Parquet IO
+  # "polars",             # tabellarische Daten, CSV/Parquet IO
+  # "scipy",              # Statistik, Signalverarbeitung, Interpolation
+  #
+  # --- Visualization ---
+  # "matplotlib",         # Standard-Plots, Layouts
+  # "seaborn",            # statistische Visualisierungen
+  # "plotly",             # interaktive Plots für Notebooks
+  #
+  # --- Machine Learning / Modelle ---
+  # "scikit-learn",       # Regressions-, Klassifikations- und Clustering-Algorithmen
+  # "xgboost",            # Gradient Boosting Modelle (optional)
+  #
+  # --- Jupyter & Notebook Tools ---
+  # "jupyter",            # Basispaket für Jupyter Notebooks
+  # "ipykernel",          # Kernel-Integration in VS Code / Jupyter
+  # "notebook",           # klassisches Notebook-Interface
+  #
+  # --- Data formats & IO ---
+  # "pyarrow",            # Arrow / Parquet IO
+  #
+  # --- Utilities ---
+  # "tqdm",               # Fortschrittsbalken
+  # "rich",               # farbige Terminalausgabe, Logging
+  # "loguru",             # vereinfachtes Logging
+  # "logging",            # Logging
+  #
+  # --- Dev / QA ---
+  # "ruff",               # Linter & Importsortierung
+  # "black",              # Codeformatter
+  # "mypy",               # Typprüfung
+  # "pytest",             # Unit-Testing
+]
+
+# ---------------------------------------------------------------------
+# Optionaler Dev-Bereich (wird nur mit "uv sync --dev" installiert)
+# ---------------------------------------------------------------------
+[project.optional-dependencies]
+dev = [
+  "black",
+  "ruff",
+  "pytest",
+  "mypy",
+]
+
+# ---------------------------------------------------------------------
+# Tool-Konfigurationen (Beispiel)
+# ---------------------------------------------------------------------
+[tool.black]
+line-length = 100
+target-version = ["py312"]
+skip-string-normalization = true
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+lint.select = ["E","F","I","UP","B","PL","RUF"]
+lint.ignore = ["E203","E501"]
+fix = true
+
+[tool.mypy]
+python_version = "3.12"

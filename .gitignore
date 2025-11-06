@@ -1,0 +1,28 @@
+# OS/Editor
+.DS_Store
+Thumbs.db
+
+# Python / venv / Caches
+.venv/
+__pycache__/
+*.pyc
+.mypy_cache/
+.ruff_cache/
+.pytest_cache/
+
+# Jupyter
+.ipynb_checkpoints/
+**/.ipynb_checkpoints/
+
+# Logs / Temp / Working
+logs/
+working/
+
+# Build/Dist (falls du Pakete/CLI baust)
+build/
+dist/
+*.egg-info/
+
+# Env-Dateien (falls benötigt)
+.env
+.env.*

@@ -1,0 +1,38 @@
+// .vscode/settings.json
+{
+  // UI & Rechtschreibung
+  "locale": "en",
+  "cSpell.language": "de,de-DE",
+  "cSpell.enabledLanguageIds": ["python", "markdown", "plaintext", "jupyter"],
+
+  // Python-Interpreter/Kernels (pro Analyse-eigenes venv)
+  "python.defaultInterpreterPath": "${workspaceFolder}/.venv/bin/python",
+  "python.analysis.typeCheckingMode": "basic",
+  "python.terminal.activateEnvironment": true,
+
+  // Lint & Format
+  "python.linting.ruffEnabled": true,
+  "ruff.importStrategy": "fromEnvironment",
+  "python.formatting.provider": "black",
+  "black-formatter.args": ["--line-length=100"],
+  "editor.codeActionsOnSave": {
+    "source.organizeImports": "explicit",
+    "source.fixAll.ruff": "explicit"
+  },
+
+  // Jupyter
+  "jupyter.notebookFileRoot": "${workspaceFolder}",
+
+  // Index/Explorer schlank halten
+  "files.exclude": {
+    "**/__pycache__": true,
+    ".venv": true,
+  },
+  "search.exclude": {
+    ".venv": true,
+  },
+
+  // Editor
+  "editor.rulers": [100],
+  "files.trimTrailingWhitespace": true
+}
