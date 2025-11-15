@@ -26,3 +26,6 @@ dist/
 # Env-Dateien (falls benötigt)
 .env
 .env.*
+
+.snakemake/
+

@@ -1,9 +1,9 @@
 [project]
-name = "example-analysis"
+name = "2025_bachelor_thesis"
 version = "0.1.0"
 description = ""
 authors = [{ name = "Kyell Jensen" }]
-# readme = "README.md"
+readme = "README.md"
 # license = { text = "MIT" }
 requires-python = ">=3.12"
 
@@ -12,6 +12,8 @@ requires-python = ">=3.12"
 # ---------------------------------------------------------------------
 dependencies = [
   # --- Core scientific stack ---
+  "pyyaml",
+  "snakemake",
   # "numpy",              # numerische Arrays, Vektoroperationen
   # "pandas",             # tabellarische Daten, CSV/Parquet IO
   # "polars",             # tabellarische Daten, CSV/Parquet IO
@@ -27,8 +29,8 @@ dependencies = [
   # "xgboost",            # Gradient Boosting Modelle (optional)
   #
   # --- Jupyter & Notebook Tools ---
-  # "jupyter",            # Basispaket für Jupyter Notebooks
-  # "ipykernel",          # Kernel-Integration in VS Code / Jupyter
+  "jupyter",            # Basispaket für Jupyter Notebooks
+  "ipykernel",          # Kernel-Integration in VS Code / Jupyter
   # "notebook",           # klassisches Notebook-Interface
   #
   # --- Data formats & IO ---

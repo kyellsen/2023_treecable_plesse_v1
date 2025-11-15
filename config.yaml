@@ -1,0 +1,21 @@
+project:
+  id: "2025_BA"
+  name: "2025_bachelor_thesis"
+
+experiment:
+  id: "2023_plesse"
+  name: "2023_treecable_plesse_v1"
+
+paths:
+  data: "../../200_data"
+  working: "working"
+  results: "../../400_results/2023_treecable_plesse_v1"
+  notebooks: "notebooks"
+  scripts: "scripts"
+
+devices:
+  use_overview: true
+  use_ls3: true
+  use_ptq: true
+  use_tms: false
+  use_tcc: false
