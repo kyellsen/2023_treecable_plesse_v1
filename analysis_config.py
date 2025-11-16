@@ -1,6 +1,8 @@
 from __future__ import annotations
+
 from pathlib import Path
 from typing import Any
+
 import yaml
 
 ROOT = Path(__file__).resolve().parent
@@ -27,20 +29,23 @@ class ConfigNode:
         return f"ConfigNode({self.__dict__})"
 
 
-def _build_paths(raw_paths: dict[str, str], base: Path) -> ConfigNode:
+def _build_paths(raw: dict[str, Any], base: Path) -> ConfigNode:
     """
-    Wandelt ALLE Werte unter 'paths' in absolute Path-Objekte um.
-    - relative Pfade werden relativ zu 'base' interpretiert
-    - absolute Pfade bleiben absolut
+    Rekursive Pfad-Konvertierung:
+    - Strings werden zu absoluten Pfaden
+    - verschachtelte Dicts bleiben erhalten
     """
-    converted: dict[str, Path] = {}
-    for key, value in raw_paths.items():
-        p = Path(value)
-        if not p.is_absolute():
-            p = (base / p).resolve()
+    converted = {}
+    for key, value in raw.items():
+        if isinstance(value, dict):
+            converted[key] = _build_paths(value, base)
         else:
-            p = p.resolve()
-        converted[key] = p
+            p = Path(value)
+            if not p.is_absolute():
+                p = (base / p).resolve()
+            else:
+                p = p.resolve()
+            converted[key] = p
     return ConfigNode(converted)
 
 
