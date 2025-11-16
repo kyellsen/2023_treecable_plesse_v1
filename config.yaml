@@ -9,12 +9,19 @@ experiment:
 paths:
   data: "../../200_data"
   working: "working"
-  results: "../../400_results/2023_treecable_plesse_v1"
+  results:
+    root: "../../400_results/2023_treecable_plesse_v1"
+    plots: "plots"
+    tables: "tables"
+    reports: "reports"
+    logs: "logs"
+    exports: "exports"
+    latex: "latex"
   notebooks: "notebooks"
   scripts: "scripts"
 
 devices:
-  use_overview: true
+  use_metadata: true
   use_ls3: true
   use_ptq: true
   use_tms: false
