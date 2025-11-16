@@ -41,6 +41,7 @@ dependencies = [
   # "rich",               # farbige Terminalausgabe, Logging
   # "loguru",             # vereinfachtes Logging
   "logging",            # Logging
+  "slugify",            # saubere Dateinamen generieren
   #
 ]
 
