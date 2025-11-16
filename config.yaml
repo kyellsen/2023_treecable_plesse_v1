@@ -7,7 +7,13 @@ experiment:
   name: "2023_treecable_plesse_v1"
 
 paths:
-  data: "../../200_data"
+  data:
+    root: "../../200_data"
+    metadata: "metadata"
+    ls3: "ls3"
+    ptq: "ptq"
+    tms: "tms"
+    tcc: "tcc"
   working: "working"
   results:
     root: "../../400_results/2023_treecable_plesse_v1"
